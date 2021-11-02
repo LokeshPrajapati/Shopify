@@ -1,0 +1,197 @@
+<div class="collection__list-container">
+<div class="page-width">
+  <div class="collection-heading-container text-center">
+    {% if section.settings.title != blank %}
+    	<h2 class="collection--title">{{section.settings.title}}</h2>
+    {% endif %}
+  </div>
+  <div class="inner-collection-list-container">
+    <ul class="d-flex small-hide">
+      	{% case section.settings.collection-to-show %}
+      		{% when '3' %}
+      		{% assign column_width = "medium-up--one-thire small-one-whole"%}
+      		{% when '4' %}
+      		{% assign column_width = "medium-up--one-fourth small-one-whole"%}
+      		{% when '5' %}
+      		{% assign column_width = "medium-up--one-fifth small-one-whole"%}
+      		{% when '6' %}
+      		{% assign column_width = "medium-up--one-sixth small-one-whole"%}
+      	{% endcase %}
+      {% for block in section.blocks %}      	
+      	<li class="collection--banner {{column_width}}">
+          <a href="{{block.settings.url}}" class="collection--link">
+          	<div class="img-rounded">
+              <img src="{{block.settings.img | img_url : 'medium'}}" loading="lazy"/
+                   style="border-radius: {{section.settings.image_design}}">
+            </div>
+            {% if block.settings.text != blank %}
+            	<h3 class="collection-text">{{block.settings.text}}</h3>
+            {% endif %}
+          </a>
+      	</li>
+      {% endfor %}
+    </ul>
+    <ul class="d-flex large-d-none {% if section.settings.enable_slider %} responsive {% endif %}">
+      	{% case section.settings.collection-to-show %}
+      		{% when '3' %}
+      		{% assign column_width = "medium-up--one-thire small-one-whole"%}
+      		{% when '4' %}
+      		{% assign column_width = "medium-up--one-fourth small-one-whole"%}
+      		{% when '5' %}
+      		{% assign column_width = "medium-up--one-fifth small-one-whole"%}
+      		{% when '6' %}
+      		{% assign column_width = "medium-up--one-sixth small-one-whole"%}
+      	{% endcase %}
+      {% for block in section.blocks %}      	
+      	<li class="collection--banner {{column_width}}">
+          <a href="{{block.settings.url}}" class="collection--link">
+          	<div class="img-rounded">
+              <img src="{{block.settings.img | img_url : 'medium'}}" loading="lazy"/
+                   style="border-radius: {{section.settings.image_design}}">
+            </div>
+            {% if block.settings.text != blank %}
+            	<h3 class="collection-text">{{block.settings.text}}</h3>
+            {% endif %}
+          </a>
+      	</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+</div>
+
+
+<script>
+
+$( document ).ready(function() {
+  $('.responsive').slick({
+  dots: false,
+    arrows : false,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 6,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1.6,
+        slidesToScroll: 1,
+        arrows : false,
+        dots : true,
+      }
+    }
+  ]
+});
+});
+  
+
+</script>
+
+
+{% schema %}
+  {
+    "name": "Custome Collection List",
+    "settings": [
+		{
+			"type" : "checkbox",
+			"id" : "enable_slider",
+			"label" : "Enable Slider On Mobile"
+		},
+		{
+			"type" : "text",
+			"id" : "title",
+			"label" : "heading"
+		},
+		{
+			"type" : "select",
+			"id" : "collection-to-show",
+			"label" : "Column Width",
+			"default" : "6",
+			"options" : [
+				{
+					"value" : "3",
+					"label" : "3"
+				},
+				{
+					"value" : "4",
+					"label" : "4"
+				},
+				{
+					"value" : "5",
+					"label" : "5"
+				},
+				{
+					"value" : "6",
+					"label" : "6"
+				}
+			]
+		},
+		{
+			"type" : "select",
+			"id" : "image_design",
+			"label" : "Image Layout",
+			"options" : [
+				{
+					"label" : "Rounded",
+					"value" : "50%"
+				},
+				{
+					"label" : "Square",
+					"value" : "0"
+				},
+				{
+					"label" : "Border Rounded",
+					"value" : "10px"
+				}
+			],
+			"default" : "50%"
+		}
+	],
+	"blocks" : [
+		{
+			"type"  : "collection",
+			"name" : "Custome Collection List",
+			"settings" : [
+				{
+					"type" : "image_picker",
+					"id" : "img",
+					"label" : "Collection Image"
+				},
+				{
+					"type" : "text",
+					"id" : "text",
+					"label" : "Collection Title"
+				},
+				{
+					"type" : "url",
+					"id" : "url",
+					"label" : "Collection Url"
+				}
+			]
+		}
+	],
+	"presets" : [
+		{
+			"name": "Custome Collection List"
+		}
+	]
+  }
+{% endschema %}
+
