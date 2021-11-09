@@ -1,0 +1,200 @@
+<div class="slider-container">
+    <div class="single-item">
+    {% for block in section.blocks %}
+    <div class="slider d-flex "> 	
+       {% case block.settings.split %}
+            {% when 'image-left'%}
+              {% assign img_position = 0 %}
+          {% when 'image-right'%}
+              {% assign img_position = 1 %}
+       {% endcase %}
+        {% if block.settings.img != blank %}
+          <div class="slider-img medium-up--one-half small-one-whole" style="order:{{img_position}}">
+              <img src="{{block.settings.img | img_url : "original"}}" loading="lazy"/>
+          </div>
+        {% endif%}
+        {% if block.settings.text != blank %}
+          <div class="slider-containt medium-up--one-half small-one-whole">
+            <div class="inner-slider-containt">
+              {% if block.settings.title != blank %}
+                  <h2 class="slider-title"
+                      style="color:{{block.settings.text-color}}">{{block.settings.title}}</h2>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                  <p class="slider-text"
+                     style="color:{{block.settings.text-color}}">{{block.settings.text}}</p>
+              {% endif %}
+              {% if block.settings.btn_url != blank %}
+                  <a class="btn btn-primary" href="{{block.settings.btn_url}}"
+                     style="background-color:{{block.settings.bg-color}};color:{{block.settings.link-color}};">{{block.settings.btn}}</a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      
+      
+      
+    </div>
+    {% endfor %}
+    </div>
+  </div>
+  
+<style>
+
+/*======= Slider Css start ======*/
+
+.slider-container {
+    position: relative;
+  	overflow: hidden;
+}
+
+.slider-container .slick-list.draggable{
+	padding : 0px;
+}
+.slider-img img {
+    width: 100%;
+    height: 100%;
+}
+.slider-containt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F2E2DF;
+}
+.inner-slider-containt {
+    padding-left: calc(50px + (77 - 50) * (100vw - 375px) / (1920 - 375));
+    padding-right: calc(25px + (80 - 25) * (100vw - 375px) / (1920 - 375));
+}
+h2.slider-title {
+    font-size: calc(30px + (75 - 30) * (100vw - 375px) / (1920 - 375));
+  	margin: 0;
+  	line-height : calc(33px + (79 - 33) * (100vw - 375px) / (1920 - 375));
+}
+.inner-slider-containt p {
+    margin-bottom: calc(27px + (73 - 27) * (100vw - 375px) / (1920 - 375));
+    margin-top: calc(8px + (27 - 8) * (100vw - 375px) / (1920 - 375));
+  	font-size: calc(16px + (30 - 16) * (100vw - 375px) / (1920 - 375)) !important;
+    font-weight: 600;
+    color: #40332F;
+  	font-family : 'azo_sansblack';
+}
+.slick-track {
+    display: flex;
+  	align-items: self-start;;
+    justify-content: start;
+    margin: auto;
+}
+.slick-current {
+    border-color: #40332f !important;
+}
+.slick-dots li button:before{
+	width: 25px !important;
+    height: 6px !important;
+    background: #40332f;
+  	content : '' !important;
+}
+.slick-dotted.slick-slider {
+    margin-bottom: 0px !important; 
+}
+
+/*======= Slider Css End =======*/
+
+</style>
+
+  <script>
+  
+  $( document ).ready(function() {
+    $('.single-item').slick({
+        dots: true,
+      autoplay : true,
+      arrows : false,
+      infinite: true,
+      speed: 1000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    });
+  });
+    
+  </script>
+  
+  {% schema %}
+    {
+      "name": "Home Slider Split",
+      "settings": [],
+      "blocks" : [
+          {
+              "name" : "Slide",
+              "type" : "slider",
+              "settings" : [
+                  {
+                      "type" : "image_picker",
+                      "id" : "img",
+                      "label" : "Slider Image"
+                  },
+                  {
+                    "type" : "select",
+                    "id" : "split",
+                    "label" : "Image Position",
+                    "options" : [
+                      {
+                        "value" : "image-left",
+                        "label" : "image-left"
+                      },
+                      {
+                        "value" : "image-right",
+                        "label" : "image-right"
+                      },
+                      {
+                        "value" : "image-center",
+                        "label" : "Image Center"
+                      }
+                    ]
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "title",
+                      "label" : "Slide Title"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "text",
+                      "label" : "Slide Text"
+                  },
+                  {
+                      "type" : "color",
+                      "id" : "text-color",
+                      "label" : "Text Color"
+                  },
+                  {
+                      "type" : "url",
+                      "id" : "btn_url",
+                      "label" : "Button Link"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "btn",
+                      "label" : "Button Text"
+                  },
+                  {
+                      "type" : "color",
+                      "id" : "bg-color",
+                      "label" : "Button Bg Color"
+                  },
+                  {
+                      "type" : "color",
+                      "id" : "link-color",
+                      "label" : "Button Text Color"
+                  }
+              ]
+              
+          }	
+      ],
+      "presets" : [
+          {
+              "name" : "Home Slider Split"
+          }
+      ]
+    }
+  {% endschema %}
+  
+  
