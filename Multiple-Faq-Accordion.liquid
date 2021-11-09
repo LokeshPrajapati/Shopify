@@ -1,0 +1,771 @@
+<div class="p-5">
+    <div class="page-width acordion__container-home {{section.id}}">
+      <div class="faq-heading text-center">
+        {% if section.settings.heading != blank %}
+            <h2 class="{% if section.settings.text-left != blank %}faq--heading {%else%} collection--title {%endif%}"
+              {%if section.settings.color != blank %}
+              style="color : {{section.settings.color}}"
+              {%endif%}>{{section.settings.heading}}</h2>
+        {% endif %}
+      </div>
+      {% for block in section.blocks %}
+        <div class="accordion-container" >
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text}}</p>
+            {% endif %}
+            {% if block.settings.content != blank %}
+                <div class="faqs--content">{{block.settings.content}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading1 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading1}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text1 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text1}}</p>
+            {% endif %}
+            {% if block.settings.content1 != blank %}
+                <div class="faqs--content">{{block.settings.content1}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading2 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading2}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text2 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text2}}</p>
+            {% endif %}
+            {% if block.settings.content2 != blank %}
+                <div class="faqs--content">{{block.settings.content2}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading3 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading3}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text3 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text3}}</p>
+            {% endif %}
+            {% if block.settings.content3 != blank %}
+                <div class="faqs--content">{{block.settings.content3}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading4 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading4}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text4 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text4}}</p>
+            {% endif %}
+            {% if block.settings.content4 != blank %}
+                <div class="faqs--content">{{block.settings.content4}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading5 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading5}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text5 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text5}}</p>
+            {% endif %}
+            {% if block.settings.content5 != blank %}
+                <div class="faqs--content">{{block.settings.content5}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading6 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading6}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text6 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text6}}</p>
+            {% endif %}
+            {% if block.settings.content6 != blank %}
+                <div class="faqs--content">{{block.settings.content6}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading7 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading7}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text7 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text7}}</p>
+            {% endif %}
+            {% if block.settings.content7 != blank %}
+                <div class="faqs--content">{{block.settings.content7}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading8 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading8}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text8 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text8}}</p>
+            {% endif %}
+            {% if block.settings.content8 != blank %}
+                <div class="faqs--content">{{block.settings.content8}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading9 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading9}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text9 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text9}}</p>
+            {% endif %}
+            {% if block.settings.content9 != blank %}
+                <div class="faqs--content">{{block.settings.content9}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading10 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading10}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text10 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text10}}</p>
+            {% endif %}
+            {% if block.settings.content10 != blank %}
+                <div class="faqs--content">{{block.settings.content10}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading11 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading11}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text11 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text11}}</p>
+            {% endif %}
+            {% if block.settings.content11 != blank %}
+                <div class="faqs--content">{{block.settings.content11}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading12 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading12}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text12 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text12}}</p>
+            {% endif %}
+            {% if block.settings.content12 != blank %}
+                <div class="faqs--content">{{block.settings.content12}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading13 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading13}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text13 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text13}}</p>
+            {% endif %}
+            {% if block.settings.content13 != blank %}
+                <div class="faqs--content">{{block.settings.content13}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading14 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading14}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text14 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text14}}</p>
+            {% endif %}
+            {% if block.settings.content14 != blank %}
+                <div class="faqs--content">{{block.settings.content14}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading15 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading15}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text15 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text15}}</p>
+            {% endif %}
+            {% if block.settings.content15 != blank %}
+                <div class="faqs--content">{{block.settings.content15}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading16 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading16}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text16 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text16}}</p>
+            {% endif %}
+            {% if block.settings.content16 != blank %}
+                <div class="faqs--content">{{block.settings.content16}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading17 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading17}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text17 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text17}}</p>
+            {% endif %}
+            {% if block.settings.content17 != blank %}
+                <div class="faqs--content">{{block.settings.content17}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading18 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading18}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text18 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text18}}</p>
+            {% endif %}
+            {% if block.settings.content18 != blank %}
+                <div class="faqs--content">{{block.settings.content18}}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="accordion-container">
+          <div class="acco-queastion">
+            {% if block.settings.accordion-heading19 != blank %}
+                <h5 class="accordion-heading">{{block.settings.accordion-heading19}}</h5>
+            {% endif%}
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="acco-answer">
+            {% if block.settings.accordion-text19 != blank %}
+                <p class="accordion-text">{{block.settings.accordion-text19}}</p>
+            {% endif %}
+            {% if block.settings.content19 != blank %}
+                <div class="faqs--content">{{block.settings.content19}}</div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+      {% if section.settings.btn_url != blank %}
+      <div class="faq-button">
+        <a href="{{section.settings.btn_url}}" class="btn btn-primary text-center">{{section.settings.btn}}</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <style>
+    .acco-answer{display:none;}
+  </style>
+  
+  
+  {% schema %}
+    {
+      "name": "FAQ Accordion",
+      "settings": [
+          {
+              "type" : "checkbox",
+              "id" : "text-left",
+              "label" : "Enable Text Left"
+          },
+          {
+              "type" : "text",
+              "id" : "heading",
+              "label" : "Heading"
+          },
+          {
+              "type" : "color",
+              "id" : "color",
+              "label" : "Heading Color"
+          },
+          {
+              "type" : "url",
+              "id" : "btn_url",
+              "label" : "Button Link"
+          },
+          {
+              "type" : "text",
+              "id" : "btn",
+              "label" : "Button Label"
+          }
+      ],
+      "max_blocks" : 200,
+      "blocks" : [
+          {
+              "type" : "text",
+              "name" : "Faq",
+              "settings" : [
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading1",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text1",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content1",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading2",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text2",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content2",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading3",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text3",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content3",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading4",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text4",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content4",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading5",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text5",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content5",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading6",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text6",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content6",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading7",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text7",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content7",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading8",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text8",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content8",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading9",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text9",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content9",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading10",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text10",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content10",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading11",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text11",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content11",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading12",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text12",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content12",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading13",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text13",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content13",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading14",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text14",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content14",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading15",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text15",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content15",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading16",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text16",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content16",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading17",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text17",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content17",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading18",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text18",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content18",
+                      "label" : "Content"
+                  },
+                  {
+                      "type" : "header",
+                      "content" : "FAQ"
+                  },
+                  {
+                      "type" : "text",
+                      "id" : "accordion-heading19",
+                      "label" : "Accordion Heading"
+                  },
+                  {
+                      "type" : "richtext",
+                      "id" : "accordion-text19",
+                      "label" : "Accordion Description"
+                  },
+                  {
+                      "type" : "html",
+                      "id" : "content19",
+                      "label" : "Content"
+                  }
+              ]
+          }
+      ],
+      "presets" : [
+          {
+              "name" : "FAQ Accordion"
+          }
+      ]
+    }
+  {% endschema %}
+  

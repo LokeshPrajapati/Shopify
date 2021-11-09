@@ -1,0 +1,207 @@
+<div class="{% if section.settings.enable-padding %}p-5 {%else%} container--collection{% endif %}">
+	<div class="{%if section.settings.enable_page_width%}page-width{%endif%} {% if section.settings.enable-divider%} collection-divider{% endif%}">
+      <div class="collection-heading">
+        {% if section.settings.heading != blank %}
+        <h2 class="{%if section.settings.font_size  %} small-font-size {% else%}collection--title {% endif %}{% if section.settings.text_align != blank %}{{section.settings.text_align}}{% endif %}">{{section.settings.heading}}</h2>         
+        {% endif %}
+        {% if section.settings.description != blank%}
+        <div class="custome-collection-description {% if section.settings.text_align != blank %}{{section.settings.text_align}}{% endif %}">{{section.settings.description}}</div>
+        {% endif%}
+      </div>
+      <div class="featured-collection-container">
+        
+        <ul class="featured-collection-slider inline-slider-container  collection-style-slider {% if section.settings.class != blank%} {{section.settings.class}} {% endif%}">
+        	{% for block in section.blocks%}
+              <li class="featured-collection-items">
+                {% if section.blocks.size <= 3%}
+                <div class="center-container">
+                  <div class="collection-heading">
+                    {% if block.settings.heading != blank %}
+                    <h2 class="{%if section.settings.font_size  %} small-font-size {% else%}collection--title {% endif %}{% if section.settings.text_align != blank %}{{section.settings.text_align}}{% endif %}">{{block.settings.heading}}</h2> 
+                    {% endif %}
+                    {% if block.settings.description != blank%}
+                    <div class="custome-collection-description {% if section.settings.text_align != blank %}{{section.settings.text_align}}{% endif %}">{{block.settings.description}}</div>
+                    {% endif%}
+                  </div>
+                {% endif %}
+                
+                {% if block.settings.url != blank%}
+                <a href="{{block.settings.url}}">
+                  <div class="collection-style-container text-center">
+                      {% if block.settings.img != blank%}
+                      <div class="collection-style-img">
+                          <img src="{{block.settings.img | img_url : '313x'}}" loading="lazy" />
+                      </div>
+                      {% endif %}
+                      {% if block.settings.sub-heading != blank%}
+                      <div class="collection-content-container">
+                        <h3 class="custome--collection-heading">{{block.settings.sub-heading}}</h3>
+                        <div class="collection-content">{{block.settings.content}}</div>
+                      </div>
+                      {% endif %}
+                  </div>
+                </a>
+                {% endif %}
+                {% if section.blocks.size <= 3%}
+                </div>
+                {%endif%}
+              </li>
+          	{% endfor %}
+        </ul>
+      </div>
+    </div>
+</div>
+
+
+<script>
+$( document ).ready(function() {
+  
+$('.collection-style-slider').slick({
+  dots: false,
+  arrows: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 4.5,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: false,
+        dots: false
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        dots: false
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1.5,
+        slidesToScroll: 1,
+        dots: false
+      }
+    }
+  ]
+});
+  
+});
+  
+</script>
+
+
+{% schema %}
+  {
+    "name": "Shop By Collection",
+    "settings": [
+		{
+          "type" : "text",
+          "id" : "class",
+          "label" : "Add Classs In Slider"
+		},
+		{
+			"type" : "checkbox",
+			"id" : "enable-padding",
+			"label" : "Enable Padding"
+		},
+		{
+			"type" : "checkbox",
+			"id" : "enable_page_width",
+			"label" : "Enable Page Width",
+			"default" : true
+		},
+		{
+			"type" : "checkbox",
+			"id" : "enable-divider",
+			"label" : "Enable Divider",
+			"default" : true
+		},
+		{
+			"type" : "checkbox",
+			"id" : "font_size",
+			"label" : "Apply Small Font Size",
+			"default" : true
+		},
+		{
+			"type" : "select",
+			"id" : "text_align",
+			"label" : "Text Alignment",
+			"default" : "text-left",
+			"options" : [
+				{
+					"value" : "text-left",
+					"label" : "left"
+				},
+				{
+					"value" : "text-center",
+					"label" : "center"
+				},
+				{
+					"value" : "text-right",
+					"label" : "right"
+				}
+			]
+		},
+		{
+          "type" : "text",
+          "id" : "heading",
+          "label" : "Heading"
+        },
+        {
+          "type" : "richtext",
+          "id" : "description",
+          "label" : "Descriptions"
+        }
+	],
+	"blocks" : [
+		{
+			"type" : "text",
+			"name" : "All Wig Styles",
+			"settings" : [
+				{
+					"type" : "url",
+					"id" : "url",
+					"label" : "Collection Url"
+				},
+				{
+					"type" : "image_picker",
+					"id" : "img",
+					"label" : "Collection Style Image"
+				},
+				{
+					"type" : "text",
+					"id" : "heading",
+					"label" : "Collection Style Heading"
+				},
+				{
+					"type" : "richtext",
+					"id" : "description",
+					"label" : "Collection Style Content"
+				},
+				{
+					"type" : "text",
+					"id" : "sub-heading",
+					"label" : "Collection Style Heading"
+				},
+				{
+					"type" : "richtext",
+					"id" : "content",
+					"label" : "Collection Style Content"
+				}
+			]
+		}
+	],
+	"presets"  : [
+		{
+			"name" : "Shop By Collections"
+		}
+	]
+  }
+{% endschema %}

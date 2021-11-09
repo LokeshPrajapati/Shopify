@@ -1,0 +1,58 @@
+<div class="aboutus">
+    <div class="image-conatiner medium-up--one-third small-one-whole is-sticky">
+      {%if section.settings.image-pick != blank%}
+      <img loading="lazy" src="{{section.settings.image-pick |img_url:"original"}}">
+      {%endif%}
+    </div>
+    
+    <div class="liquid-conatin medium-up--two-thirds small-one-whole" >
+      <div class="page-width">
+      {% include 'breadcrumbs'%}
+      {%if section.settings.customliquid != blank%}
+      {{section.settings.customliquid}}
+      {%endif%}
+    
+    </div>
+      </div>
+  </div>
+  
+<style>
+
+@supports (position: sticky) {
+  .is-sticky {
+    position: sticky;
+    top: 0px; // Threshold is required
+  }
+}
+
+</style>
+
+  {% schema %}
+    {
+      "name": "image with custom",
+      "settings": [
+                           {
+                              "type":"image_picker",
+                              "id":"image-pick",
+                              "label":"image"
+                            },
+                              {
+                                "type":"liquid",
+                                "id":"customliquid",
+                                "label":"custom liquid"
+                              } 
+                      
+                      
+              
+  ],
+  
+  "presets": [
+      {
+        "name": "image with liquid"
+      }
+    ]
+  }
+  
+  {% endschema %}
+  
+  

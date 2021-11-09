@@ -1,0 +1,557 @@
+{%for block in section.blocks%}
+	{% case block.type %}
+	{% when 'multiple-image-with-text'%}
+	{% assign col--width = 'medium-up--one-half small-one-whole'%}
+	<div class="pop-up-container" id="{%- if block.settings.id != blank -%}{{- block.settings.id -}} {%- else -%} {{block.settings.main-heading | handleize }} {%- endif -%}">
+		<div class="popup-inline-container inner_popup" id="{%- if block.settings.id != blank -%}{{- block.settings.id -}} {%- else -%} {{block.settings.main-heading | handleize }} {%- endif -%}">
+  <div class="close-button">
+    <img src="https://cdn.shopify.com/s/files/1/0567/2920/6954/files/cancel.png?v=1633611693" class="close-button-img" />
+  </div>
+  {%if block.settings.main-heading != blank%}
+  <h2 class="main-heading text-center">{{block.settings.main-heading}}</h2>
+  {%endif%}
+  <div class="inline-popup {%if block.settings.text-position%}text-position--{{block.settings.text-position}}{%endif%}">
+    <div class="{{col--width}}">
+      <div class="popup {%if block.settings.text-position%}text--{{block.settings.text-position}}{%endif%}">
+        {% if block.settings.img != blank %}
+        <div class="popup-image">
+          <img src="{{block.settings.img |  img_url : 'master'}}" />
+        </div>
+        {% endif %} 
+        {% if block.settings.description != blank%}
+        <div class="popup-descriptions">
+          {% if block.settings.recommend != blank%}
+          <h5 class="recommendation-text">{{block.settings.recommend}}</h5>
+          {%endif%}
+          {% if block.settings.heading != blank %}
+          <h3 class="heading_popup">{{block.settings.heading}}</h3>
+          {% endif %}
+          {% if block.settings.description != blank %}
+          <p class="popup--description">{{block.settings.description}}</p>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="{{col--width}}">
+      <div class="popup {%if block.settings.text-position%}text--{{block.settings.text-position}}{%endif%}">
+        {% if block.settings.img-1 != blank %}
+        <div class="popup-image">
+          <img src="{{block.settings.img-1 |  img_url : 'master'}}" />
+        </div>
+        {% endif %} 
+        {% if block.settings.description-1 != blank%}
+        <div class="popup-descriptions">
+          {% if block.settings.recommend-1 != blank%}
+          <h5 class="recommendation-text">{{block.settings.recommend-1}}</h5>
+          {%endif%}
+          {% if block.settings.heading-1 != blank %}
+          <h3 class="heading_popup">{{block.settings.heading-1}}</h3>
+          {% endif %}
+          {% if block.settings.description-1 != blank %}
+          <p class="popup--description">{{block.settings.description-1}}</p>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="{{col--width}}">
+      <div class="popup {%if block.settings.text-position%}text--{{block.settings.text-position}}{%endif%}">
+        {% if block.settings.img-2 != blank %}
+        <div class="popup-image">
+          <img src="{{block.settings.img-2 |  img_url : 'master'}}" />
+        </div>
+        {% endif %} 
+        {% if block.settings.description-2 != blank%}
+        <div class="popup-descriptions">
+          {% if block.settings.recommend-2 != blank%}
+          <h5 class="recommendation-text">{{block.settings.recommend-2}}</h5>
+          {%endif%}
+          {% if block.settings.heading-2 != blank %}
+          <h3 class="heading_popup">{{block.settings.heading-2}}</h3>
+          {% endif %}
+          {% if block.settings.description-2 != blank %}
+          <p class="popup--description">{{block.settings.description-2}}</p>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="{{col--width}}">
+      <div class="popup {%if block.settings.text-position%}text--{{block.settings.text-position}}{%endif%}">
+        {% if block.settings.img-3 != blank %}
+        <div class="popup-image">
+          <img src="{{block.settings.img-3 |  img_url : 'master'}}" />
+        </div>
+        {% endif %} 
+        {% if block.settings.description-3 != blank%}
+        <div class="popup-descriptions">
+          {% if block.settings.recommend-3 != blank%}
+          <h5 class="recommendation-text">{{block.settings.recommend-3}}</h5>
+          {%endif%}
+          {% if block.settings.heading-3 != blank %}
+          <h3 class="heading_popup">{{block.settings.heading-3}}</h3>
+          {% endif %}
+          {% if block.settings.description-3 != blank %}
+          <p class="popup--description">{{block.settings.description-3}}</p>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+	</div>
+	{%when 'table'%}
+	{%assign col--width = 'medium-up--one-third small-one-whole'%}
+	<div class="pop-up-container" id="{%- if block.settings.id != blank -%}{{- block.settings.id -}} {%- else -%} {{block.settings.main-heading | handleize }} {%- endif -%}">
+		<div class="popup-tabel-container inner_popup" id="{%- if block.settings.id != blank -%} {{- block.settings.id -}} {%- else -%} {{block.settings.main-heading | handleize }} {%- endif -%}">
+  <div class="close-button">
+    <img src="https://cdn.shopify.com/s/files/1/0567/2920/6954/files/cancel.png?v=1633611693" class="close-button-img" />
+  </div>
+  {%if block.settings.main-heading != blank%}
+  <h2 class="main-heading text-center">{{block.settings.main-heading}}</h2>
+  {%endif%}
+  <div class="table-popup">
+    <div class="{{col--width}} small-hide">
+      <div class="popup">
+        {%if block.settings.img1 != blank%}
+        <div class="table--image">
+          <img src="{{block.settings.img1 | img_url : 'master'}}" />
+          {%if block.settings.img-heading != blank%}
+          <h4 class="img-heading">{{block.settings.img-heading}}</h4>
+          {%endif%}
+        </div>
+        {%endif%}
+        <div class="table-content">
+          {%if block.settings.text != blank%}
+          <p class="table-text{%if block.settings.font-weight == 'bold'%}bold{%else%}normal-text{%endif%}">{{block.settings.text}}</p>
+          {%endif%}
+          {%if block.settings.text1 != blank%}
+          <p class="table-text{%if block.settings.font-weight == 'bold'%}bold{%else%}normal-text{%endif%}">{{block.settings.text1}}</p>
+          {%endif%}
+          {%if block.settings.text2 != blank%}
+          <p class="table-text{%if block.settings.font-weight == 'bold'%}bold{%else%}normal-text{%endif%}">{{block.settings.text2}}</p>
+          {%endif%}
+        </div>
+
+      </div>
+    </div>
+    <div class="{{col--width}} small-hide">
+      <div class="popup">
+        {%if block.settings.img2 != blank%}
+        <div class="table--image">
+          <img src="{{block.settings.img2 | img_url : 'master'}}" />
+          {%if block.settings.img-heading1 != blank%}
+          <h4 class="img-heading">{{block.settings.img-heading1}}</h4>
+          {%endif%}
+        </div>
+        {%endif%}
+        <div class="table-content">
+          {%if block.settings.text_1 != blank%}
+          <p class="table-text{%if block.settings.font-weight == 'bold'%}bold{%else%}normal-text{%endif%}">{{block.settings.text_1}}</p>
+          {%endif%}
+          {%if block.settings.text_2 != blank%}
+          <p class="table-text{%if block.settings.font-weight == 'bold'%}bold{%endif%}">{{block.settings.text_2}}</p>
+          {%endif%}
+          {%if block.settings.text_3 != blank%}
+          <p class="table-text{%if block.settings.font-weight == 'bold'%}bold{%endif%}">{{block.settings.text_3}}</p>
+          {%endif%}
+        </div>
+
+      </div>
+    </div>
+    <div class="{{col--width}} small-hide">
+      <div class="popup">
+        {%if block.settings.img3 != blank%}
+        <div class="table--image">
+          <img src="{{block.settings.img3 | img_url : 'master'}}" />
+          {%if block.settings.img-heading2 != blank%}
+          <h4 class="img-heading">{{block.settings.img-heading2}}</h4>
+          {%endif%}
+        </div>
+        {%endif%}
+        <div class="table-content">
+          {%if block.settings.text--1 != blank%}
+          <p class="table-text{%if block.settings.font-weight == 'bold'%}bold{%else%}normal-text{%endif%}">{{block.settings.text--1}}</p>
+          {%endif%}
+          {%if block.settings.text--2 != blank%}
+          <p class="table-text{%if block.settings.font-weight == 'bold'%}bold{%endif%}">{{block.settings.text--2}}</p>
+          {%endif%}
+          {%if block.settings.text--3 != blank%}
+          <p class="table-text{%if block.settings.font-weight == 'bold'%}bold{%endif%}">{{block.settings.text--3}}</p>
+          {%endif%}
+        </div>
+
+      </div>
+    </div>
+    <div class="mobile-view large-d-none">
+      <div class="mobile-table-popup">
+        <div class="mobile-table-content">
+          <div class="mobile-container">
+            {%if block.settings.text != blank%}
+            <p class="table-text {%if block.settings.font-weight == 'bold'%}text-bold{%else%}text-normal-text{%endif%}">{{block.settings.text}}</p>
+            {%endif%}
+            {%if block.settings.mobile-text != blank%}
+            <p class="tabel-popup-mobile-description">{{block.settings.mobile-text}}</p>
+            {%endif%}
+          </div>
+          <div class="mobile-container">
+            {%if block.settings.text1 != blank%}
+            <p class="table-text {%if block.settings.font-weight == 'bold'%}text-bold{%else%}text-normal-text{%endif%}">{{block.settings.text1}}</p>
+            {%endif%}
+            {%if block.settings.mobile-text1 != blank%}
+            <p class="tabel-popup-mobile-description">{{block.settings.mobile-text1}}</p>
+            {%endif%}
+          </div>
+          <div class="mobile-container">
+            {%if block.settings.text2 != blank%}
+            <p class="table-text {%if block.settings.font-weight == 'bold'%}text-bold{%else%}text-normal-text{%endif%}">{{block.settings.text2}}</p>
+            {%endif%}
+            {%if block.settings.mobile-text2 != blank%}
+            <p class="tabel-popup-mobile-description">{{block.settings.mobile-text2}}</p>
+            {%endif%}
+          </div>
+        </div>
+        <div class="mobile-table-image-popup">
+          {%if block.settings.img1 != blank%}
+          <div class="small-one-half">
+            {%if block.settings.img1 != blank%}
+            <div class="table--image">
+              <img src="{{block.settings.img1 | img_url : 'master'}}" />
+              {%if block.settings.img-heading != blank%}
+              <h4 class="img-heading">{{block.settings.img-heading}}</h4>
+              {%endif%}
+            </div>
+            {%endif%}
+          </div>
+          {%endif%}
+          <div class="small-one-half">
+            {%if block.settings.img2 != blank%}
+            <div class="table--image">
+              <img src="{{block.settings.img2 | img_url : 'master'}}" />
+              {%if block.settings.img-heading1 != blank%}
+              <h4 class="img-heading">{{block.settings.img-heading1}}</h4>
+              {%endif%}
+            </div>
+            {%endif%}
+          </div>
+          <div class="small-one-half">
+            {%if block.settings.img3 != blank%}
+            <div class="table--image">
+              <img src="{{block.settings.img3 | img_url : 'master'}}" />
+              {%if block.settings.img-heading2 != blank%}
+              <h4 class="img-heading">{{block.settings.img-heading2}}</h4>
+              {%endif%}
+            </div>
+            {%endif%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+	</div>
+    {%endcase%}
+{%endfor%}
+
+
+
+{% schema %}
+  {
+    "name": "Pop-Ups",
+	"blocks":[
+				{
+					"type" : "table",
+					"name"  : "Image With Table",
+					"settings" : [
+						{
+							"type" : "header",
+							"content" : "Popup Heading"
+						},
+						{
+							"type" : "text",
+							"id" : "id",
+							"label" : "Popup Id"
+						},
+						{
+							"type" : "text",
+							"id" : "main-heading",
+							"label" : "Popup Heading"
+						},
+						{
+							"type" : "header",
+							"content" : "Popup Images"
+						},
+						{
+							"type" : "image_picker",
+							"id" : "img1",
+							"label" : "Popup Image"
+						},
+						{
+							"type" : "image_picker",
+							"id" : "img2",
+							"label" : "Popup Image"
+						},
+						{
+							"type" : "image_picker",
+							"id" : "img3",
+							"label" : "Popup Image"
+						},
+						{
+							"type" : "header",
+							"content" : "Popup Image Heading"
+						},
+						{
+							"type" : "text",
+							"id"  : "img-heading",
+							"label" : "Heading"
+						},
+						{
+							"type" : "text",
+							"id"  : "img-heading1",
+							"label" : "Heading"
+						},
+						{
+							"type" : "text",
+							"id"  : "img-heading2",
+							"label" : "Heading"
+						},
+						{
+							"type" : "header",
+							"content" : "Popup Image Heading Font Weight"
+						},
+						{
+							"type" : "select",
+							"id" : "font-weight",
+							"label" : "Font-Weight",
+							"options" : [
+								{
+									"label" : "Bold",
+									"value" : "bold"
+								},
+								{
+									"label" : "Normal",
+									"value" : "normal"
+								}
+							]
+						},
+						{
+							"type" : "header",
+							"content" : "Popup Content"
+						},
+						{
+							"type"  : "richtext",
+							"id" : "text",
+							"label" : "Table Heading"
+						},
+						{
+							"type"  : "richtext",
+							"id" : "text1",
+							"label" : "Table Heading"
+						},
+						{
+							"type"  : "richtext",
+							"id" : "text2",
+							"label" : "Table Heading"
+						},
+						{
+							"type"  : "richtext",
+							"id" : "text_1",
+							"label" : "Table Heading"
+						},
+						{
+							"type"  : "richtext",
+							"id" : "text_2",
+							"label" : "Table Heading"
+						},
+						{
+							"type"  : "richtext",
+							"id" : "text_3",
+							"label" : "Table Heading"
+						},
+						{
+							"type"  : "richtext",
+							"id" : "text--1",
+							"label" : "Table Heading"
+						},
+						{
+							"type"  : "richtext",
+							"id" : "text--2",
+							"label" : "Table Heading"
+						},
+						{
+							"type"  : "richtext",
+							"id" : "text--3",
+							"label" : "Table Heading"
+						},
+						{
+							"type" : "header",
+							"content" : "Mobile Content"
+						},
+						{
+							"type"  : "richtext",
+							"id" : "mobile-text",
+							"label" : "Table Heading"
+						},
+						{
+							"type"  : "richtext",
+							"id" : "mobile-text1",
+							"label" : "Table Heading"
+						},
+						{
+							"type"  : "richtext",
+							"id" : "mobile-text2",
+							"label" : "Table Heading"
+						}
+					]
+				},
+				{
+					"type" : "multiple-image-with-text",
+					"name" : "Popup With Multiple Image",
+					"settings" : [
+						{
+							"type" : "text",
+							"id" : "main-heading",
+							"label" : "Popup Heading"
+						},
+						{
+							"type" : "text",
+							"id" : "id",
+							"label" : "Popup Id"
+						},
+						{
+							"type" : "header",
+							"content" : "Popup Images"
+						},
+						{
+							"type" : "image_picker",
+							"id" : "img",
+							"label" : "Popup Image"
+						},
+						{
+							"type" : "image_picker",
+							"id" : "img-1",
+							"label" : "Popup Image"
+						},
+						{
+							"type" : "image_picker",
+							"id" : "img-2",
+							"label" : "Popup Image"
+						},
+						{
+							"type" : "image_picker",
+							"id" : "img-3",
+							"label" : "Popup Image"
+						},
+						{
+							"type" : "header",
+							"content" : "Text Position"
+						},
+						{
+							"type" : "select",
+							"id" : "text-position",
+							"label" : "Text Position",
+							"options" : [
+								{
+									"label" : "Left",
+									"value" : "left"
+								},
+								{
+									"label" : "Top",
+									"value" : "top"
+								},
+								{
+									"label" : "Bottom",
+									"value" : "bottom"
+								},
+								{
+									"label" : "Right",
+									"value" : "right"
+								}
+							]
+						},
+						{
+							"type" : "header",
+							"content" : "Recommendation Text"
+						},
+						{
+							"type" : "text",
+							"id" : "recommend",
+							"label" : "Recommend Text"
+						},
+						{
+							"type" : "text",
+							"id" : "recommend-1",
+							"label" : "Recommend Text"
+						},
+						{
+							"type" : "text",
+							"id" : "recommend-2",
+							"label" : "Recommend Text"
+						},
+						{
+							"type" : "text",
+							"id" : "recommend-3",
+							"label" : "Recommend Text"
+						},
+						{
+							"type" : "header",
+							"content" : "Heading"
+						},
+						{
+							"type" : "text",
+							"id" : "heading",
+							"label" : "Heading"
+						},
+						{
+							"type" : "text",
+							"id" : "heading-1",
+							"label" : "Heading"
+						},
+						{
+							"type" : "text",
+							"id" : "heading-2",
+							"label" : "Heading"
+						},
+						{
+							"type" : "text",
+							"id" : "heading-3",
+							"label" : "Heading"
+						},
+						{
+							"type" : "header",
+							"content" : "Descriptions"
+						},
+						{
+							"type" : "richtext",
+							"id" : "description",
+							"label" : "Popup Description"
+						},
+						{
+							"type" : "richtext",
+							"id" : "description-1",
+							"label" : "Popup Description"
+						},
+						{
+							"type" : "richtext",
+							"id" : "description-2",
+							"label" : "Popup Description"
+						},
+						{
+							"type" : "richtext",
+							"id" : "description-3",
+							"label" : "Popup Description"
+						}
+					]
+				}
+				
+	] 
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
